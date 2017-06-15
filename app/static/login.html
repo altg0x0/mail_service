@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <title>Login page</title>
+ <meta charset="utf-8">
+</head>
+<body onload="helo()">
+  <p style = 'color:red ;' id="inc_label">INCORRECT EMAIL/PASSWORD</p>
+  <form action="/auth" method="post">
+   <p>Username: <input name="user" type='username' required></p>
+   <p>Password: <input type="password" name="pswd" required></p>
+   <p>Remember me:<input name="remember" type="checkbox" value="True"></p>
+   <p>
+     <input type="submit" class = 'sbmt'  value="Log in"></input>
+     <a href = '#' class = 'sbmt'>I forgot my password</a>
+     <a href = '/register.html' class = 'sbmt'>Create new account</a></p>
+   </form>
+<script src="/scripts/login.js">
+</script>
+ </body>
+</html>

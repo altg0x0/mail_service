@@ -1,0 +1,64 @@
+<html>
+      <head>
+<link rel="stylesheet" type="text/css" href="https://altg0x0.tk/style.css">
+ <title>&#128386; Subject: {{message['subject']}}!</title>
+ <meta charset="utf-8">
+</head>
+<body>
+ <div id="wrapper">
+  <div id="header">
+ <img src = 'https://altg0x0.tk/mail.png' title = 'logo' height = 100%>
+<span style = 'position: absolute;  height:1em;'> Search mail: <input type = 'text'><a href = '#' class = 'sbmt' height = 2px>GO!</a> </span>
+
+<a href="#" class="btn" style = 'position: absolute;  height:2em; right: 0em;'>&#9881;</a>
+<a href="#" class="btn" style = 'position: absolute; right: 4em; height:2em;'><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/man.png' height = 12px> PROFILE</p></a>
+<a href="#" class="btn" style = 'position: absolute; right: 14em; height:2em;'><p style = 'margin-top: 0.675em;'>ABOUT</p></a>
+ </div>
+ <div id="navigation" color = 'white'><nobr>
+<b> FOLDERS: &nbsp; </b>
+<a href="https://altg0x0.tk/inbox" class="btn" color = 'red' >  <p style = 'margin-top: 0.675em;'> <img src ='https://altg0x0.tk/icons/inbox.png' height = 12px> INBOX</p>
+</a><a href="https://altg0x0.tk/sent" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/sent.png' height = 12px> SENT</p>
+</a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>FLAGGED &#9873;</p>
+</a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/draft.png' height = 12px>DRAFTS</p>
+</a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>SPAM</p>
+</a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>TRASH</p></a>
+<b>OPTIONS: &nbsp; </b>
+<a href="https://altg0x0.tk/inbox" class="btn"><p style = 'margin-top: 0.675em;'>&#8635; REFRESH</p>
+</a><a href="#" class="btn"> <p style = 'margin-top: 0.675em;'>  <img src ='https://altg0x0.tk/icons/newemail.png' height = 12px> WRITE NEW </p> </a>
+
+ </nobr></div>
+ <table border = 0px height = 'auto' cellspacing="0" width=100%>
+<tr>
+<td width = 80% style = 'background: #d2d0d2; color: black;'>
+ <h1 style =  'padding: 0.5%;'> {{message['subject']}}</h1>
+ <p style = 'font-size: 16px;'>
+   {{message['body']}}
+</p >
+<td width = 20% style = 'background: #333333; color: white;'>
+ <b>  From: </b><br>
+ &nbsp; {{message['from_real_name']}}<br><i> &nbsp; {{message['from_address']}}</i><hr>
+ <b>  To: </b><br>
+ &nbsp; {{message['to_real_name']}}<br><i> &nbsp; {{message['to_address']}}</i><hr>
+ <b>Date:</b><br>
+ &nbsp; {{date}}<hr>
+ <b>Time:</b><br>
+ &nbsp; {{time}} <!-- <hr>
+ <b>Attached files:</b><br>
+ &nbsp; &nbsp; <a href = 'sg.txt' class = 'sbmt' style = 'padding-left: 15px;'>old-style css button.txt <i>33 kb</i></a><hr>
+ <b> Status: </b><br>
+ &nbsp; Read, unflagged &#9872;, 1 file <img src ='https://altg0x0.tk/icons/attach.png' height = 12px> -->
+</td>
+</tr>
+</table>
+
+ <div id="footer">
+<a href="https://altg0x0.tk/new?subject={{message['subject']}}&to={{message['from_address']}}" class="btn">REPLY
+</a><a href="#" class="btn">FLAG &#9873;
+</a><a href="#" class="btn">MARK AS UNREAD
+</a><a href="#" class="btn">MARK AS SPAM
+</a><a href="https://altg0x0.tk/del/in/{{id}}" class="btn"><img src ='https://altg0x0.tk/icons/delete.png' height = 12px> DELETE</a><a href="#" class="btn">DOWNLOAD/PRINT</a><a href="#" class="btn"> &#8592; PREV
+</a><a href="#" class="btn">NEXT &#8594; </a>
+ </div>
+  </div>
+</body>
+      </html>

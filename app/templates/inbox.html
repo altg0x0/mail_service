@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+      <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <title>&#128386; {{folder|upper}}</title>
+ <meta charset="utf-8">
+</head>
+<body>
+
+<script src="/scripts.js"></script>
+
+ <div id="wrapper">
+  <div id="header">
+ <img src = 'mail.png' title = 'logo' height=100%>
+ <span style = 'position: absolute;  height:1em;'> Search mail: <input type = 'text'><a href = '#' class = 'sbmt' height = 2px>GO!</a> </span>
+
+
+<a href="#" class="btn" style = 'position: absolute;  height:2em; right: 0em;'>&#9881;</a>
+<a href="#" class="btn" style = 'position: absolute; right: 4em; height:2em;'><p style = 'margin-top: 0.675em;'>PROFILE</p></a>
+<a href="#" class="btn" style = 'position: absolute; right: 14em; height:2em;'><p style = 'margin-top: 0.675em;'>ABOUT</p></a>
+ </div>
+
+ <div id="navigation" color = 'white'><nobr>
+   <b>&nbsp;FOLDERS: &nbsp; </b>
+   <a href="https://altg0x0.tk/inbox?count=25&first=0" class="btn" color = 'red' >  <p style = 'margin-top: 0.675em;'> <img src ='https://altg0x0.tk/icons/inbox.png' height = 13> INBOX</p>
+   </a><a href="https://altg0x0.tk/sent?count=25&first=0" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/sent.png' height = 13> SENT</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>FLAGGED &#9873;</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/draft.png' height = 12px>DRAFTS</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>SPAM</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>TRASH</p></a>
+   <b>OPTIONS: &nbsp; </b>
+   <a href="?count=25&first=0" class="btn"><p style = 'margin-top: 0.675em;'>&#8635; REFRESH</p>
+   </a><a href="/new" class="btn"> <p style = 'margin-top: 0.675em;'>  <img src ='https://altg0x0.tk/icons/newemail.png' height = 12px> WRITE NEW </p> </a>
+
+ </nobr></div>
+
+ <table style="border : 2 px solid white;" cellspacing="0" width = 100%>
+<tr>
+<td width = 80% style = 'background: #d2d0d2; color: black;'>
+
+<table width = 100% cellspacing="0">
+
+<form action="/del/{{folder_id}}/" method="post" name="sel">
+  {% for row in messages %}
+<tr height = 2em>
+<td width = 1em>
+  &#9675; </td><td width=1em>
+  &#9873; </td><td height = 0px>
+  &nbsp; {{row['short_from_real_name']}}  </td><td width=3em>
+<i>{{row['from_address']}}</i>  </td><td height = 'auto'>
+<b>{{row['short_subject']}}</b>  </td><td>
+   <a class="rltxt" href="{{'messages/' ~ folder_id ~ '/' ~ (first + loop.index0)}}">
+   {{row['short_body']|safe}} </a>  </td><td>
+{{row['date']}}</td><td>
+  <input id="select" type="checkbox" name="selected" value="{{loop.index0}}"></td>
+</tr>
+  {% endfor %}
+</table>
+
+
+</td>
+<td width = 20% style = 'background: #333333; color: white;'>
+ <h1 style =  'padding: 0.5%;'> {{folder|upper}}</h1>
+ <b>  You: </b><br>
+ &nbsp; {{user.realname}}<br><i> &nbsp; {{user._id}}@altg0x0.tk</i><hr>
+ <b>  Total {{folder}}: </b><br>
+&nbsp; {{total_count}}<hr>
+ <!-- <b> Total sent</b><br>
+ &nbsp; 4<hr> /-->
+ <b>Now:</b><br>
+ &nbsp; {{date_now}}<hr>
+ <!--<b>Attached files:</b><br>
+ &nbsp; &nbsp; <a href = 'sg.txt' class = 'sbmt' style = 'padding-left: 15px;'>old-style css button.txt <i>33 kb</i></a> <hr> /-->
+ <b> Status: </b><br>
+ &nbsp;
+ {% if total_count > 0 %}
+ messages {{first+1}}-{{first+count}} from {{total_count}}
+ {% else %}
+ No messages available!
+ {% endif%}
+</td>
+</tr>
+
+</table>
+ <div id="footer">
+ <a href="#" class="btn">SELECT ALL
+ </a><a href="#" class="btn">FLAG SELECTED&#9873;
+ </a><a href="#" class="btn">MARK SELECTED AS UNREAD
+ </a><a href="#" class="btn">MARK SELECTED AS SPAM
+ </a><a name = "select" type = "submit" href="javascript:jsdel();" value ="DELETE SELECTED" class="btn">DELETE SELECTED</a><a {% if first > 0 and first <= countm %}
+  {{"href=" ~ folder ~ "?count=" ~ countm ~ "&first=0"}}
+  {% elif first > countm %}
+  {{"href=" ~ folder ~ "?count=" ~ countm ~ "&first=" ~ (first - countm)}}
+{% endif %}
+class="btn"> &#8592; PREV PAGE
+
+</form>
+
+ </a><a {% if first + countm < total_count %}
+ {{"href=" ~ folder ~ "?count=" ~ countm ~ "&first=" ~ (first + countm)}}
+ {% endif %}
+  class="btn">NEXT PAGE&#8594; </a>
+ </div>
+  </div>
+</body>
+      </html>

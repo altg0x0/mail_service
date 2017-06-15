@@ -1,0 +1,58 @@
+<html>
+      <head>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <title>&#128386; NEW</title>
+ <meta charset="utf-8">
+</head>
+<body>
+ <div id="wrapper">
+  <div id="header">
+ <img src = 'mail.png' title = 'logo' height = 100%>
+<span style = 'position: absolute;  height:1em;'> Search mail: <input type = 'text'><a href = '#' class = 'sbmt' height = 2px>GO!</a> </span>
+
+<a href="#" class="btn" style = 'position: absolute;  height:2em; right: 0em;'>&#9881;</a>
+<a href="#" class="btn" style = 'position: absolute; right: 4em; height:2em;'><p style = 'margin-top: 0.675em;'><img src ='icons/man.png' height = 12px> PROFILE</p></a>
+<a href="#" class="btn" style = 'position: absolute; right: 14em; height:2em;'><p style = 'margin-top: 0.675em;'>ABOUT</p></a>
+ </div>
+ <div id="navigation" color = 'white'><nobr>
+   <b>&nbsp;FOLDERS: &nbsp; </b>
+   <a href="https://altg0x0.tk/inbox?count=25&first=0" class="btn" color = 'red' >  <p style = 'margin-top: 0.675em;'> <img src ='https://altg0x0.tk/icons/inbox.png' height = 13> INBOX</p>
+   </a><a href="https://altg0x0.tk/sent?count=25&first=0" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/sent.png' height = 13> SENT</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>FLAGGED &#9873;</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'><img src ='https://altg0x0.tk/icons/draft.png' height = 12px>DRAFTS</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>SPAM</p>
+   </a><a href="#" class="btn"><p style = 'margin-top: 0.675em;'>TRASH</p></a>
+   <b>OPTIONS: &nbsp; </b>
+   <a class="btn"><p style = 'margin-top: 0.675em;'>&#8635; REFRESH</p>
+   </a><a href="/new" class="btn"> <p style = 'margin-top: 0.675em;'>  <img src ='https://altg0x0.tk/icons/newemail.png' height = 12px> WRITE NEW </p> </a>
+
+ </nobr></div>
+ <form action="/send" method="post">
+ <table border = 0px height = 'auto' cellspacing="0" width = 100%>
+<tr>
+<td width = 80% style = 'background: #d2d0d2; color: black;'>
+ <textarea rows="30" cols="45" class="form-field outline" name="body" width = 100% height=100% ></textarea>
+</td>
+<td width = auto style = 'background: #333333; color: white;'>
+<b> Subject </b><br>
+ &nbsp; <input type = "text" value="{{subject}}" name="subject"size = "40"><hr>
+ <b>  From: </b><br>
+ &nbsp; {{user.realname}}<br><i> &nbsp; &nbsp;{{user._id}}@altg0x0.tk</i><hr>
+ <b>  To: </b><br>
+&nbsp;  <input name="to" type = 'email' value="{{to}}" required size = "40"><br>
+<!-- &nbsp;&nbsp;<a href = '#' class = 'sbmt' height = 2px>CHOOSE CONTACT</a><a href = '#' class = 'sbmt' height = 2px>+</a><hr> -->
+<!-- <b>Attached files:</b><br>
+ &nbsp; <a href = 'sg.txt' class = 'sbmt' style = 'padding-left: 15px;'>Attach new file </a><hr> -->
+<!-- <b> Status: </b><br>
+ &nbsp; Saved, unflagged &#9872;, 0 files <img src ='icons/attach.png' height = 12px> -->
+</td>
+</tr>
+</table>
+
+ <div id="footer">
+ <input type="submit" class="btn" value="SEND"></input><a href="#" class="btn"><img src ='icons/draft.png' height = 12px> SAVE</a><a href="#" class="btn">CANCEL</a>
+ </div>
+ </form>
+  </div>
+</body>
+      </html>
